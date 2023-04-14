@@ -1,16 +1,20 @@
+body {
+    background-color: #EFEBE0;
+}
+
 #calculator {
-    background-color: pink;
+    background-color: #E05780;
     width: 400px;
-    height: 600px;
+    height: 540px;
     margin: 10px;
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 #main {
-    border: 2px solid palevioletred;
-    border-radius: 15px;
-    height: 590px;
+    border: 2px solid #B9375E;
+    border-radius: 10px;
+    height: 530px;
     padding: 3px;
 }
 
@@ -22,20 +26,26 @@
 #calc_name,
 #top_right {
     flex: 1 0 0;
+    margin: 0;
 }
 
 #calc_name {
     display: flex;
     align-items: flex-start;
-    font-size: 30px;
+    font-size: 50px;
+    font-family: 'Gaegu', cursive;
+    padding-left: 10px;
 }
 
 #model {
     text-align: right;
+    font-family: 'Single Day', cursive;
+    padding: 3px;
+    margin: 2px;
 }
 
 #solar {
-    background-color: rgb(45, 10, 27);
+    background-color: #522E38;
     height: 40px;
     display: flex;
     border-radius: 5px;
@@ -47,20 +57,68 @@
     border-radius: 5px;
 }
 
+#display_upper {
+    height: 20px;
+}
 
-#display {
-    border: 0.5px solid black;
+#display_lower {
+    font-size: 50px;
+}
+
+#display_upper,
+#display_lower {
+    text-align: right;
     padding: 5px;
     margin: 2px;
-    height: 80px;
+}
+
+#display {
+    margin: 5px;
+    padding: 2px;
+    background-color: #EEDEE0;
+    border: 2px solid #8A2846;
+    border-radius: 10px;
+    font-family: 'Gaegu', cursive;
 }
 
 #buttons {
     display: flex;
-    flex-wrap: wrap;
+    margin: 2px;
+    padding: 5px;
 }
 
-button.num {
-    height: 100px;
-    width: 80px;
+button {
+    background-color: #FF9EBB;
+    border: 5px solid #B9375E;
+    height: auto;
+    margin: 2px;
+    border-radius: 18px;
+    font-family: 'Gaegu', cursive;
+    font-size: 30px;
 }
+
+button.special {
+    width: 140px;
+    border: 5px solid #602437;
+    background-color: #8A2846;
+    color: #FFC2D4;
+}
+
+button.operand,
+button.decimal,
+button.operand.zero,
+button#equals {
+    width: 90px;
+    height: 60px;
+    color: #371520;
+}
+
+button.operator {
+    width: 70px;
+    color: #371520;
+}
+
+button#add {
+    height: 140px;
+}
+
