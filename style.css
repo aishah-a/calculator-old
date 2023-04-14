@@ -1,5 +1,9 @@
 body {
     background-color: #EFEBE0;
+    font-family: 'Gaegu', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #calculator {
@@ -29,13 +33,13 @@ body {
 }
 
 #calc_name {
-    font-family: 'Gaegu', cursive;
-    font-size: 50px;
+    font-size: 60px;
+    height: 79px;
+    padding: 0 0 5px 5px;
 }
 
 #model {
     text-align: right;
-    font-family: 'Single Day', cursive;
     padding: 3px;
     margin: 2px;
 }
@@ -74,7 +78,6 @@ body {
     background-color: #EEDEE0;
     border: 2px solid #8A2846;
     border-radius: 10px;
-    font-family: 'Gaegu', cursive;
 }
 
 #buttons {
@@ -89,7 +92,6 @@ button {
     height: auto;
     margin: 2px;
     border-radius: 18px;
-    font-family: 'Gaegu', cursive;
     font-size: 30px;
 }
 
