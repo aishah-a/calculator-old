@@ -1,0 +1,60 @@
+#calculator {
+    background-color: pink;
+    width: 400px;
+    height: 600px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+#main {
+    border: 2px solid palevioletred;
+    border-radius: 15px;
+    height: 590px;
+    padding: 3px;
+}
+
+#top {
+    display: flex;
+    margin: 5px;
+}
+
+#calc_name,
+#top_right {
+    flex: 1 0 0;
+}
+
+#calc_name {
+    display: flex;
+    align-items: flex-start;
+    font-size: 30px;
+}
+
+#model {
+    text-align: right;
+}
+
+#solar {
+    background-color: rgb(45, 10, 27);
+    height: 40px;
+    display: flex;
+    border-radius: 5px;
+}
+
+#solar div {
+    border: 1px solid black;
+    flex-grow: 1;
+    border-radius: 5px;
+}
+
+
+#display {
+    border: 0.5px solid black;
+    padding: 5px;
+    margin: 2px;
+    height: 80px;
+}
+
+#buttons {
+    
+}
