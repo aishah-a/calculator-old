@@ -1,26 +1,17 @@
+// operator functions
 function addFn(num1, num2) { num1 + num2;}
-
 function subtractFn(num1, num2) { num1 - num2;}
-
 function multiplyFn(num1, num2) { num1 * num2;}
-
 function divideFn(num1, num2) { num1 / num2;}
 
-let firstNum;
-let operator;
-let secondNum;
-
-const operate = function operate(firstNum, secondNum, operator) {
-    // let result = operator(firstNum, secondNum)
+const operate = function operate(num1, num2, operator) {
 }
-
-// click num button
-// event listener on button -> on click, run function
-// store value of clicked button in variable
-// change display content to value of variable
 
 const calculator = document.getElementById('calculator')
 const display = document.getElementById('display')
+const displayUpper = document.getElementById('display_upper');
+const displayLower = document.getElementById('display_lower');
+const clearBtn = document.getElementById('clear')
 
 const add = document.getElementById('add');
 add.addEventListener('click', addFn);
@@ -35,7 +26,7 @@ const divide = document.getElementById('divide');
 divide.addEventListener('click', divideFn)
 
 
-const numBtn = document.querySelectorAll('.num');
+const numBtn = document.querySelectorAll('.operand');
 
 // iterate through each number button
 numBtn.forEach((button) => {
@@ -45,7 +36,10 @@ numBtn.forEach((button) => {
 let clickedNum = []
 
 function displayClickedNum(event) {
-    clickedNum.push(' ' + event.target.id);
-    display.innerText = clickedNum;
+    let clickVal = parseInt(event.target.textContent)
+    clickedNum.push(clickVal);
+    displayLower.innerText = clickedNum;
     return clickedNum;
 }
+
+
