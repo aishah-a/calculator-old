@@ -25,16 +25,12 @@ body {
 
 #calc_name,
 #top_right {
-    flex: 1 0 0;
-    margin: 0;
+    flex-grow: 1;
 }
 
 #calc_name {
-    display: flex;
-    align-items: flex-start;
-    font-size: 50px;
     font-family: 'Gaegu', cursive;
-    padding-left: 10px;
+    font-size: 50px;
 }
 
 #model {
