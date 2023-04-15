@@ -1,7 +1,5 @@
 # calculator
 
-<h2>Use Cases<h2>
-<p>
 Here are some use cases (abilities your project needs to have):
 
 Your calculator is going to contain functions for all of the basic math operators you typically find on simple calculators, so start by creating functions for the following items and testing them in your browser’s console.
@@ -26,4 +24,3 @@ You should round answers with long decimals so that they don’t overflow the sc
 Pressing = before entering all of the numbers or an operator could cause problems!
 Pressing “clear” should wipe out any existing data.. make sure the user is really starting fresh after pressing “clear”
 Display a snarky error message if the user tries to divide by 0… and don’t let it crash your calculator!
-<p>
