@@ -5,8 +5,8 @@
 body {
     background-color: #EFEBE0;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 #calculator {
@@ -16,6 +16,7 @@ body {
     margin: 10px;
     padding: 10px;
     border-radius: 15px;
+    flex-shrink: 0;
 }
 
 #main {
@@ -132,5 +133,3 @@ button.operator {
 button#add {
     height: 141px;
 }
-
-
