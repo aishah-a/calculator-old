@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="style.css">
         <title>Calculator</title>
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap');
         </style>
     </head>
     <body>
@@ -27,9 +27,9 @@
                     <div id="display_lower">0</div>
                 </div>
                 <div id="buttons">
-                    <div id="operands">
+                    <div id="buttons_left">
                         <button class="special">ON/온</button>
-                        <button class="special">AC/삭제</button>
+                        <button id="clear" class="special">AC/삭제</button>
                         
                         <button class="operand">7</button>
                         <button class="operand">8</button>
@@ -45,18 +45,18 @@
     
                         <button class="operand zero">0</button>
                         <button class="decimal">.</button>
+                        <button id="equals">=</button>
                     </div>
-
-                   <div id="operators">
+                   <div id="buttons_right">
                     <button id="divide" class="operator">/</button>
                     <button id="multiply" class="operator">*</button>
                     <button id="subtract" class="operator">-</button>
                     <button id="add" class="operator">+</button>
-                    <button id="equals">=</button>
+                    
                    </div>
                 </div>
             </div>
         </div>
-       <!-- <script src="script.js"></script> -->
+       <script src="script.js"></script>
     </body>
 </html>
