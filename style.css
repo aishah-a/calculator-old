@@ -1,9 +1,9 @@
 body {
     background-color: #EFEBE0;
-    font-family: 'Gaegu', cursive;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Gaegu', cursive;
 }
 
 #calculator {
@@ -23,18 +23,17 @@ body {
 }
 
 #top {
-    display: flex;
     margin: 5px;
+    display: flex;
 }
 
-#calc_name,
-#top_right {
+#top_right,
+#calc_name {
     flex-grow: 1;
 }
 
 #calc_name {
     font-size: 60px;
-    height: 79px;
     padding: 0 0 5px 5px;
 }
 
@@ -120,4 +119,5 @@ button.operator {
 button#add {
     height: 141px;
 }
+
 
