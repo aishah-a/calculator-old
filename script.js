@@ -1,9 +1,3 @@
-// operator functions
-function addFn(num1, num2) { return num1 + num2;}
-function subtractFn(num1, num2) { return num1 - num2;}
-function multiplyFn(num1, num2) { return num1 * num2;}
-function divideFn(num1, num2) { return num1 / num2;}
-
 // elements
 const calculator = document.getElementById('calculator')
 const display = document.getElementById('display')
@@ -13,16 +7,9 @@ const clearBtn = document.getElementById('clear');
 const decimalBtn = document.getElementById('decimal');
 
 const addBtn = document.getElementById('add');
-addBtn.addEventListener('click', addFn);
-
 const subtractBtn = document.getElementById('subtract');
-subtractBtn.addEventListener('click', subtractFn);
-
 const multiplyBtn = document.getElementById('multiply');
-multiplyBtn.addEventListener('click', multiplyFn);
-
 const divideBtn = document.getElementById('divide');
-divideBtn.addEventListener('click', divideFn)
 
 const operandBtns = document.querySelectorAll('.operand');
 const specialBtns = document.querySelectorAll('.special');
@@ -82,13 +69,13 @@ function storeOperator(event) {
 
 function operate() {
   if (operator === 'add') {
-    result = addFn(num1, num2);
+    result = num1 + num2;
   } else if (operator === 'subtract') {
-    result = subtractFn(num1, num2);
+    result = num1 - num2;
   } else if (operator === 'multiply') {
-    result = multiplyFn(num1, num2);
+    result = num1 * num2;
   } else if (operator === 'divide') {
-    result = divideFn(num1, num2)
+    result = num1 / num2;
   }
   displayLower.innerText = result;
 }
