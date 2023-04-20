@@ -1,9 +1,12 @@
+* {
+    font-family: 'Gaegu', cursive;
+}
+
 body {
     background-color: #EFEBE0;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Gaegu', cursive;
 }
 
 #calculator {
@@ -85,9 +88,10 @@ body {
     padding: 5px;
 }
 
+
 button {
     background-color: #FF9EBB;
-    border: 5px solid #B9375E;
+    border: 3px solid #B9375E;
     height: auto;
     margin: 2px;
     border-radius: 18px;
@@ -96,15 +100,23 @@ button {
 
 button.special {
     width: 140px;
-    border: 5px solid #602437;
-    background-color: #8A2846;
-    color: #FFC2D4;
+    border: 3px solid #265F92;
+    background-color: #79ADDC;
+    color: #1D4A72;
+    margin-bottom: 5px;
 }
 
 button.operand,
 button.decimal,
-button.operand.zero,
+button.operand.zero {
+    width: 90px;
+    height: 60px;
+    color: #371520;
+    background-color: #FF9EBB;
+}
+
 button#equals {
+    background-color: #FFD275;
     width: 90px;
     height: 60px;
     color: #371520;
@@ -114,6 +126,7 @@ button.operator {
     width: 70px;
     height: 50px;
     color: #371520;
+    background-color: #FFD275;
 }
 
 button#add {
