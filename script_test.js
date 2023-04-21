@@ -71,16 +71,16 @@ function storeOperator(event) {
     console.log(operator);
     return operator;
   } // second operation
-  if (result !== null || num2 !== null) {
+  if (operator !== null) {
+    operate(num1, num2);
     chosenOperator.pop();
     chosenOperator.push(event.target.id);
     operator = chosenOperator.toString();
     console.log('operator is ' + operator);
-    operate();
+    operate(num1, num2);
     return operator;
   }
 }
-
 
 function operate() {
   if (operator === 'add') {
@@ -93,10 +93,11 @@ function operate() {
     result = num1 / num2;
   }
   displayLower.innerText = result;
-  console.log('equals');
   console.log('result is ' + result);
   clickedNum1.length = 0;
   clickedNum2.length = 0;
+  num1 = result;
+  num2 = null;
 }
 
 
