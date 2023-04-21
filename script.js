@@ -92,7 +92,7 @@ clearBtn.addEventListener('click', clearFn)
 function clearFn() {
   num2 = null;
 
-  displayLower.innerText = '';
+  displayLower.innerText = 0;
 }
 
 // styling buttons
