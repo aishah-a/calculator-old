@@ -4,6 +4,7 @@ const display = document.getElementById('display')
 const displayUpper = document.getElementById('display_upper');
 const displayLower = document.getElementById('display_lower');
 const clearBtn = document.getElementById('clear');
+const onBtn = document.getElementById
 const decimalBtn = document.getElementById('decimal');
 
 const addBtn = document.getElementById('add');
@@ -103,21 +104,24 @@ function operate() {
 
 equalsBtn.addEventListener('click', operate)
 
-/*
-
 // END OF LOGIC
 
 
-
+// special buttons
 clearBtn.addEventListener('click', clearFn)
 
 function clearFn() {
+  clickedNum1.length = 0;
+  clickedNum2.length = 0;
+  num1 = null;
   num2 = null;
-
+  chosenOperator = [];
+  operator = null;
+  result = null;
   displayLower.innerText = 0;
 }
 
-*/
+
 
 // styling buttons
 
