@@ -4,6 +4,7 @@ const display = document.getElementById('display')
 const displayUpper = document.getElementById('display_upper');
 const displayLower = document.getElementById('display_lower');
 const clearBtn = document.getElementById('clear');
+const onBtn = document.getElementById
 const decimalBtn = document.getElementById('decimal');
 
 const addBtn = document.getElementById('add');
@@ -18,51 +19,66 @@ const equalsBtn = document.getElementById('equals');
 
 // CALCULATOR LOGIC
 
-const clickedNum1 = []
-const clickedNum2 = []
-let num1;
-let num2;
-let operator;
-let result;
+let clickedNum1 = [];
+let clickedNum2 = [];
+let num1 = null;
+let num2 = null;
+let chosenOperator = [];
+let operator = null;
+let result = null;
+
 
 // store operands
 operandBtns.forEach((button) => {
   button.addEventListener('click', storeClickedNum);
 });
 
-
 function storeClickedNum(event) {
   if (clickedNum1.length <= 12 && clickedNum2.length <= 12) {
-    if (operator === undefined) {
+    // initial operation
+    if (operator === null) {
       let clickVal = event.target.textContent;
       clickedNum1.push(clickVal);
-      num1 = clickedNum1.join('');
-      num1 = parseInt(num1);
+      num1 = clickedNum1.join(''); // join clicked nums in array
+      num1 = parseInt(num1); // turn string into num
       displayLower.innerText = num1;
-      console.log(num1); //remove
-    }
-    if (operator !== undefined) {
+      console.log('num1 is ' + num1);
+    } else if (operator !== null && num1 !== null) {
       let clickVal = event.target.textContent;
       clickedNum2.push(clickVal);
-      num2 = clickedNum2.join('');
-      num2 = parseInt(num2);
+      num2 = clickedNum2.join(''); // join clicked nums in array
+      num2 = parseInt(num2); // turn string into num
       displayLower.innerText = num2;
-      console.log(num2); //remove
+      console.log('num2 is ' + num2);
+    } if (result !== null && num2 !== null) {
+      num1 = result;
     }
   } else {
     displayLower.style.fontSize = '30px';
-    displayLower.innerText = 'Number is too long.'
+    displayLower.innerText = 'Number is too long!'
   }
-
 }
+
 
 operatorBtns.forEach((button) => {
   button.addEventListener('click', storeOperator);
 });
 
 function storeOperator(event) {
-  if (operator === undefined) {
-    operator = event.target.id
+  // inital operation
+  if (operator === null) {
+    chosenOperator.push(event.target.id);
+    operator = chosenOperator.toString();
+    console.log(operator);
+    return operator;
+  } // second operation
+  if (operator !== null) {
+    operate(num1, num2);
+    chosenOperator.pop();
+    chosenOperator.push(event.target.id);
+    operator = chosenOperator.toString();
+    console.log('operator is ' + operator);
+    operate(num1, num2);
     return operator;
   }
 }
@@ -78,22 +94,34 @@ function operate() {
     result = num1 / num2;
   }
   displayLower.innerText = result;
+  console.log('result is ' + result);
+  clickedNum1.length = 0;
+  clickedNum2.length = 0;
+  num1 = result;
+  num2 = null;
 }
 
-equalsBtn.addEventListener('click', operate)
 
+equalsBtn.addEventListener('click', operate)
 
 // END OF LOGIC
 
 
-
+// special buttons
 clearBtn.addEventListener('click', clearFn)
 
 function clearFn() {
+  clickedNum1.length = 0;
+  clickedNum2.length = 0;
+  num1 = null;
   num2 = null;
-
+  chosenOperator = [];
+  operator = null;
+  result = null;
   displayLower.innerText = 0;
 }
+
+
 
 // styling buttons
 
