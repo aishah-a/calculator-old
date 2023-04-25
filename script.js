@@ -105,8 +105,8 @@ function operate() {
   if (operator === 'divide' && num2 === 0) {
     result = 'lol nice try'
   }
-  if (result.toString().length >= 12) {
-    result = result.toFixed(10)
+  if (typeof result === 'number' && result.toString().length >= 12) {
+    result = result.toFixed(10);
   }
   if (operator === null) {
     result = 0;
