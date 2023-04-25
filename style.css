@@ -60,27 +60,15 @@ body {
     border-radius: 5px;
 }
 
-#display_upper {
-    height: 20px;
-}
-
-#display_lower {
-    font-size: 50px;
-}
-
-#display_upper,
-#display_lower {
-    text-align: right;
-    padding: 5px;
-    margin: 2px;
-}
 
 #display {
     margin: 5px;
-    padding: 2px;
+    padding: 10px 5px;
     background-color: #EEDEE0;
     border: 2px solid #8A2846;
     border-radius: 10px;
+    font-size: 50px;
+    text-align: right;
 }
 
 #buttons {
@@ -88,7 +76,6 @@ body {
     margin: 2px;
     padding: 5px;
 }
-
 
 button {
     background-color: #FF9EBB;
