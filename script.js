@@ -1,8 +1,7 @@
 // elements
 const display = document.getElementById('display')
 const clearBtn = document.getElementById('clear');
-const onBtn = document.getElementById('on-btn')
-const decimalBtn = document.getElementById('decimal');
+const onBtn = document.getElementById('on-btn');
 
 const addBtn = document.getElementById('add');
 const subtractBtn = document.getElementById('subtract');
@@ -50,21 +49,21 @@ function storeClickedNum(event) {
       num2 = parseInt(num2); // turn string into num
       display.innerText = num2;
       console.log('num2 is ' + num2);
-    } 
+    } else if (operator !== null && num1 == null) {
+      num1 = 0;
+      let clickVal = event.target.textContent;
+      clickedNum2.push(clickVal);
+      num2 = clickedNum2.join(''); // join clicked nums in array
+      num2 = parseInt(num2); // turn string into num
+      display.innerText = num2;
+      console.log('num2 is ' + num2);
+    }
 
   } else {
     display.style.fontSize = '30px';
     display.innerText = 'Number is too long!'
   }
 }
-
-
-function addDecimal() {
-  if (clickedNum1.includes('.') === false) {
-    clickedNum1.push('.')
-  }
-}
-
 
 operatorBtns.forEach((button) => {
   button.addEventListener('click', storeOperator);
@@ -104,6 +103,10 @@ function operate() {
   if (result.toString().length >= 12) {
     result = result.toFixed(10)
   }
+  if (operator === null) {
+    result = 0;
+  }
+
   display.innerText = result;
   console.log('result is ' + result);
   clickedNum1.length = 0;
@@ -113,12 +116,9 @@ function operate() {
 }
 
 equalsBtn.addEventListener('click', operate)
-
 // END OF LOGIC
 
 
-
-// special buttons
 clearBtn.addEventListener('click', clearFn)
 
 function clearFn() {
@@ -133,8 +133,12 @@ function clearFn() {
 }
 
 if (result === null) {
-  result = 0
+  result = clickedNum1;
 }
+
+
+
+
 
 // styling buttons
 
