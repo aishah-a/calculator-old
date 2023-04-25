@@ -51,10 +51,17 @@ function storeClickedNum(event) {
       display.innerText = num2;
       console.log('num2 is ' + num2);
     } 
-    
+
   } else {
     display.style.fontSize = '30px';
     display.innerText = 'Number is too long!'
+  }
+}
+
+
+function addDecimal() {
+  if (clickedNum1.includes('.') === false) {
+    clickedNum1.push('.')
   }
 }
 
@@ -94,6 +101,9 @@ function operate() {
   if (operator === 'divide' && num2 === 0) {
     result = 'lol nice try'
   }
+  if (result.toString().length >= 12) {
+    result = result.toFixed(10)
+  }
   display.innerText = result;
   console.log('result is ' + result);
   clickedNum1.length = 0;
@@ -101,7 +111,6 @@ function operate() {
   num1 = result;
   num2 = null;
 }
-
 
 equalsBtn.addEventListener('click', operate)
 
@@ -123,7 +132,9 @@ function clearFn() {
   display.innerText = 0;
 }
 
-
+if (result === null) {
+  result = 0
+}
 
 // styling buttons
 
