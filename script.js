@@ -82,6 +82,12 @@ function storeOperator(event) {
   chosenOperator.push(event.target.id);
   operator = chosenOperator.toString();
   return operator;
+  } // another operation after equals
+  else if (operator !== null && num2 === null) {
+    chosenOperator.pop();
+    chosenOperator.push(event.target.id);
+    operator = chosenOperator.toString();
+    return operator;
   }
 }
 
