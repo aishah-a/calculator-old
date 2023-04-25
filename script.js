@@ -1,8 +1,7 @@
 // elements
-const calculator = document.getElementById('calculator')
 const display = document.getElementById('display')
 const clearBtn = document.getElementById('clear');
-const onBtn = document.getElementById
+const onBtn = document.getElementById('on-btn')
 const decimalBtn = document.getElementById('decimal');
 
 const addBtn = document.getElementById('add');
@@ -51,11 +50,8 @@ function storeClickedNum(event) {
       num2 = parseInt(num2); // turn string into num
       display.innerText = num2;
       console.log('num2 is ' + num2);
-    } // for starting with 0 
+    } 
     
-    if (result !== null && num2 !== null) {
-      num1 = result;
-    }
   } else {
     display.style.fontSize = '30px';
     display.innerText = 'Number is too long!'
