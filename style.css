@@ -82,7 +82,7 @@ button {
     border: 3px solid #B9375E;
     height: auto;
     margin: 2px;
-    border-radius: 18px;
+    border-radius: 22px;
     font-size: 30px;
 }
 
@@ -96,15 +96,23 @@ button.special {
 
 button.operand,
 button.operand.zero {
-    width: 90px;
     height: 65px;
     color: #371520;
     background-color: #FF9EBB;
 }
 
+button.operand {
+    width: 90px;
+}  
+
+button.zero {
+    width: 190px;
+    margin-right: 5px;
+}
+
 button#equals {
     background-color: #FFD275;
-    width: 90px;
+    width: 88px;
     height: 60px;
     color: #371520;
 }
