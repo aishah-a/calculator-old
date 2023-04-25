@@ -41,7 +41,6 @@ if (clickedNum1.length <= 12 && clickedNum2.length <= 12) {
     num1 = clickedNum1.join(''); // join clicked nums in array
     num1 = parseInt(num1); // turn string into num
     display.innerText = num1;
-    console.log('num1 is ' + num1);
     } 
     else if (operator !== null && num1 !== null) {
       let clickVal = event.target.textContent;
@@ -49,7 +48,6 @@ if (clickedNum1.length <= 12 && clickedNum2.length <= 12) {
       num2 = clickedNum2.join(''); // join clicked nums in array
       num2 = parseInt(num2); // turn string into num
       display.innerText = num2;
-      console.log('num2 is ' + num2);
     }
     else if (operator !== null && num1 == null) {
       num1 = 0;
@@ -58,7 +56,6 @@ if (clickedNum1.length <= 12 && clickedNum2.length <= 12) {
       num2 = clickedNum2.join(''); // join clicked nums in array
       num2 = parseInt(num2); // turn string into num
       display.innerText = num2;
-      console.log('num2 is ' + num2);
     }
 
     else {
@@ -77,7 +74,6 @@ function storeOperator(event) {
   if (operator === null) {
   chosenOperator.push(event.target.id);
   operator = chosenOperator.toString();
-  console.log(operator);
   return operator;
   } // second operation
   if (operator !== null && num2 !== null) {
@@ -85,7 +81,6 @@ function storeOperator(event) {
   chosenOperator.pop();
   chosenOperator.push(event.target.id);
   operator = chosenOperator.toString();
-  console.log('new operator is ' + operator);
   return operator;
   }
 }
@@ -112,7 +107,6 @@ function operate() {
   }
 
   display.innerText = result;
-  console.log('result is ' + result);
   clickedNum1.length = 0;
   clickedNum2.length = 0;
   num1 = result;
@@ -121,7 +115,6 @@ function operate() {
 
 equalsBtn.addEventListener('click', operate)
 // END OF LOGIC
-
 
 
 // special buttons
@@ -148,7 +141,6 @@ heartBtn.addEventListener('click', heartFn);
 function heartFn(event) {
   display.innerText = '\u2665'
 }
-
 
 
 // styling buttons
