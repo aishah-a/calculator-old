@@ -13,8 +13,9 @@ const specialBtns = document.querySelectorAll('.special');
 const operatorBtns = document.querySelectorAll('.operator');
 const equalsBtn = document.getElementById('equals');
 
-// CALCULATOR LOGIC
 
+
+// CALCULATOR LOGIC
 let clickedNum1 = [];
 let clickedNum2 = [];
 let num1 = null;
@@ -30,9 +31,7 @@ operandBtns.forEach((button) => {
   button.addEventListener('click', storeClickedNum);
 });
 
-
 function storeClickedNum(event) {
-
 if (clickedNum1.length <= 12 && clickedNum2.length <= 12) {
   // initial operation
   if (operator === null) {
@@ -68,7 +67,6 @@ if (clickedNum1.length <= 12 && clickedNum2.length <= 12) {
   }
 }
  
-
 operatorBtns.forEach((button) => {
   button.addEventListener('click', storeOperator);
 });
