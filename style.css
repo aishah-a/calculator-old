@@ -92,7 +92,10 @@ button.special {
     background-color: #79ADDC;
     color: #153551;
     margin-bottom: 5px;
+    padding: 2px;
 }
+
+
 
 button.operand,
 button.operand.zero {
@@ -123,6 +126,7 @@ button.operator {
     color: #371520;
     background-color: #FFD275;
 }
+
 
 button#add {
     height: 146px;
