@@ -22,6 +22,7 @@ let num2 = null;
 let chosenOperator = [];
 let operator = null;
 let result = null;
+let calcStatus = 'off';
 
 
 // store operands
@@ -31,17 +32,17 @@ operandBtns.forEach((button) => {
 
 
 function storeClickedNum(event) {
-  if (clickedNum1.length <= 12 && clickedNum2.length <= 12) {
-    // initial operation
-    if (operator === null) {
-      let clickVal = event.target.textContent;
-      clickedNum1.push(clickVal);
-      num1 = clickedNum1.join(''); // join clicked nums in array
-      num1 = parseInt(num1); // turn string into num
-      display.innerText = num1;
-      console.log('num1 is ' + num1);
+
+if (clickedNum1.length <= 12 && clickedNum2.length <= 12) {
+  // initial operation
+  if (operator === null) {
+    let clickVal = event.target.textContent;
+    clickedNum1.push(clickVal);
+    num1 = clickedNum1.join(''); // join clicked nums in array
+    num1 = parseInt(num1); // turn string into num
+    display.innerText = num1;
+    console.log('num1 is ' + num1);
     } 
-    
     else if (operator !== null && num1 !== null) {
       let clickVal = event.target.textContent;
       clickedNum2.push(clickVal);
@@ -49,7 +50,8 @@ function storeClickedNum(event) {
       num2 = parseInt(num2); // turn string into num
       display.innerText = num2;
       console.log('num2 is ' + num2);
-    } else if (operator !== null && num1 == null) {
+    }
+    else if (operator !== null && num1 == null) {
       num1 = 0;
       let clickVal = event.target.textContent;
       clickedNum2.push(clickVal);
@@ -59,11 +61,13 @@ function storeClickedNum(event) {
       console.log('num2 is ' + num2);
     }
 
-  } else {
+    else {
     display.style.fontSize = '30px';
     display.innerText = 'Number is too long!'
+    }
   }
 }
+ 
 
 operatorBtns.forEach((button) => {
   button.addEventListener('click', storeOperator);
@@ -71,19 +75,21 @@ operatorBtns.forEach((button) => {
 
 function storeOperator(event) {
   // inital operation
-  if (operator === null) {
-    chosenOperator.push(event.target.id);
-    operator = chosenOperator.toString();
-    console.log(operator);
-    return operator;
-  } // second operation
-  if (operator !== null && num2 !== null) {
-    operate(num1, num2);
-    chosenOperator.pop();
-    chosenOperator.push(event.target.id);
-    operator = chosenOperator.toString();
-    console.log('new operator is ' + operator);
-    return operator;
+  if (calcStatus === 'on') {
+    if (operator === null) {
+      chosenOperator.push(event.target.id);
+      operator = chosenOperator.toString();
+      console.log(operator);
+      return operator;
+    } // second operation
+    if (operator !== null && num2 !== null) {
+      operate(num1, num2);
+      chosenOperator.pop();
+      chosenOperator.push(event.target.id);
+      operator = chosenOperator.toString();
+      console.log('new operator is ' + operator);
+      return operator;
+    }
   }
 }
 
@@ -119,6 +125,8 @@ equalsBtn.addEventListener('click', operate)
 // END OF LOGIC
 
 
+
+// special buttons
 clearBtn.addEventListener('click', clearFn)
 
 function clearFn() {
@@ -137,12 +145,7 @@ if (result === null) {
 }
 
 
-
-
-
 // styling buttons
-
-
 operandBtns.forEach((operandBtn) => {
   operandBtn.addEventListener('mousedown', () => {
     operandBtn.style.backgroundColor = '#FFDBE5';
