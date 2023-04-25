@@ -95,6 +95,9 @@ function operate() {
   } else if (operator === 'divide') {
     result = num1 / num2;
   }
+  if (operator === 'divide' && num2 === 0) {
+    result = 'lol nice try'
+  }
   display.innerText = result;
   console.log('result is ' + result);
   clickedNum1.length = 0;
