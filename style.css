@@ -98,7 +98,7 @@ button.operand,
 button.decimal,
 button.operand.zero {
     width: 90px;
-    height: 60px;
+    height: 65px;
     color: #371520;
     background-color: #FF9EBB;
 }
@@ -112,11 +112,11 @@ button#equals {
 
 button.operator {
     width: 70px;
-    height: 50px;
+    height: 55px;
     color: #371520;
     background-color: #FFD275;
 }
 
 button#add {
-    height: 141px;
+    height: 146px;
 }
