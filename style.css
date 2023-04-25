@@ -95,7 +95,7 @@ button.special {
 }
 
 button.operand,
-button.decimal,
+button#decimal,
 button.operand.zero {
     width: 90px;
     height: 65px;
