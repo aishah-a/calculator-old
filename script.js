@@ -31,6 +31,7 @@ operandBtns.forEach((button) => {
   button.addEventListener('click', storeClickedNum);
 });
 
+
 function storeClickedNum(event) {
   if (clickedNum1.length <= 12 && clickedNum2.length <= 12) {
     // initial operation
@@ -41,14 +42,18 @@ function storeClickedNum(event) {
       num1 = parseInt(num1); // turn string into num
       display.innerText = num1;
       console.log('num1 is ' + num1);
-    } else if (operator !== null && num1 !== null) {
+    } 
+    
+    else if (operator !== null && num1 !== null) {
       let clickVal = event.target.textContent;
       clickedNum2.push(clickVal);
       num2 = clickedNum2.join(''); // join clicked nums in array
       num2 = parseInt(num2); // turn string into num
       display.innerText = num2;
       console.log('num2 is ' + num2);
-    } if (result !== null && num2 !== null) {
+    } // for starting with 0 
+    
+    if (result !== null && num2 !== null) {
       num1 = result;
     }
   } else {
@@ -70,13 +75,12 @@ function storeOperator(event) {
     console.log(operator);
     return operator;
   } // second operation
-  if (operator !== null) {
+  if (operator !== null && num2 !== null) {
     operate(num1, num2);
     chosenOperator.pop();
     chosenOperator.push(event.target.id);
     operator = chosenOperator.toString();
-    console.log('operator is ' + operator);
-    operate(num1, num2);
+    console.log('new operator is ' + operator);
     return operator;
   }
 }
@@ -117,7 +121,7 @@ function clearFn() {
   chosenOperator = [];
   operator = null;
   result = null;
-  display.length = 0;
+  display.innerText = 0;
 }
 
 
