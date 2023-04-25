@@ -1,6 +1,7 @@
 // elements
 const display = document.getElementById('display')
 const clearBtn = document.getElementById('clear');
+const heartBtn = document.getElementById('heart');
 
 const addBtn = document.getElementById('add');
 const subtractBtn = document.getElementById('subtract');
@@ -73,23 +74,22 @@ operatorBtns.forEach((button) => {
 
 function storeOperator(event) {
   // inital operation
-  if (calcStatus === 'on') {
-    if (operator === null) {
-      chosenOperator.push(event.target.id);
-      operator = chosenOperator.toString();
-      console.log(operator);
-      return operator;
-    } // second operation
-    if (operator !== null && num2 !== null) {
-      operate(num1, num2);
-      chosenOperator.pop();
-      chosenOperator.push(event.target.id);
-      operator = chosenOperator.toString();
-      console.log('new operator is ' + operator);
-      return operator;
-    }
+  if (operator === null) {
+  chosenOperator.push(event.target.id);
+  operator = chosenOperator.toString();
+  console.log(operator);
+  return operator;
+  } // second operation
+  if (operator !== null && num2 !== null) {
+  operate(num1, num2);
+  chosenOperator.pop();
+  chosenOperator.push(event.target.id);
+  operator = chosenOperator.toString();
+  console.log('new operator is ' + operator);
+  return operator;
   }
 }
+
 
 function operate() {
   if (operator === 'add') {
@@ -125,7 +125,7 @@ equalsBtn.addEventListener('click', operate)
 
 
 // special buttons
-clearBtn.addEventListener('click', clearFn)
+clearBtn.addEventListener('click', clearFn);
 
 function clearFn() {
   clickedNum1.length = 0;
@@ -140,6 +140,13 @@ function clearFn() {
 
 if (result === null) {
   result = clickedNum1;
+}
+
+
+heartBtn.addEventListener('click', heartFn);
+
+function heartFn(event) {
+  display.innerText = '\u2665'
 }
 
 
