@@ -1,7 +1,6 @@
 // elements
 const display = document.getElementById('display')
 const clearBtn = document.getElementById('clear');
-const onBtn = document.getElementById('on-btn');
 
 const addBtn = document.getElementById('add');
 const subtractBtn = document.getElementById('subtract');
@@ -23,10 +22,11 @@ let num2 = null;
 let chosenOperator = [];
 let operator = null;
 let result = null;
-let calcStatus = 'off';
 
 
 // store operands
+
+
 operandBtns.forEach((button) => {
   button.addEventListener('click', storeClickedNum);
 });
@@ -141,6 +141,7 @@ function clearFn() {
 if (result === null) {
   result = clickedNum1;
 }
+
 
 
 // styling buttons
