@@ -1,8 +1,6 @@
 // elements
 const calculator = document.getElementById('calculator')
 const display = document.getElementById('display')
-const displayUpper = document.getElementById('display_upper');
-const displayLower = document.getElementById('display_lower');
 const clearBtn = document.getElementById('clear');
 const onBtn = document.getElementById
 const decimalBtn = document.getElementById('decimal');
@@ -41,21 +39,21 @@ function storeClickedNum(event) {
       clickedNum1.push(clickVal);
       num1 = clickedNum1.join(''); // join clicked nums in array
       num1 = parseInt(num1); // turn string into num
-      displayLower.innerText = num1;
+      display.innerText = num1;
       console.log('num1 is ' + num1);
     } else if (operator !== null && num1 !== null) {
       let clickVal = event.target.textContent;
       clickedNum2.push(clickVal);
       num2 = clickedNum2.join(''); // join clicked nums in array
       num2 = parseInt(num2); // turn string into num
-      displayLower.innerText = num2;
+      display.innerText = num2;
       console.log('num2 is ' + num2);
     } if (result !== null && num2 !== null) {
       num1 = result;
     }
   } else {
-    displayLower.style.fontSize = '30px';
-    displayLower.innerText = 'Number is too long!'
+    display.style.fontSize = '30px';
+    display.innerText = 'Number is too long!'
   }
 }
 
@@ -93,7 +91,7 @@ function operate() {
   } else if (operator === 'divide') {
     result = num1 / num2;
   }
-  displayLower.innerText = result;
+  display.innerText = result;
   console.log('result is ' + result);
   clickedNum1.length = 0;
   clickedNum2.length = 0;
@@ -107,6 +105,7 @@ equalsBtn.addEventListener('click', operate)
 // END OF LOGIC
 
 
+
 // special buttons
 clearBtn.addEventListener('click', clearFn)
 
@@ -118,7 +117,7 @@ function clearFn() {
   chosenOperator = [];
   operator = null;
   result = null;
-  displayLower.innerText = 0;
+  display.length = 0;
 }
 
 
